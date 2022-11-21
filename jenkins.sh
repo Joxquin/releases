@@ -11,6 +11,6 @@ chmod a+x bin/*
 source config.sh
 export GITHUB_TOKEN=""
 export TELEGRAM_TOKEN=""
-export TELEGRAM_CHAT=""
+export TELEGRAM_CHAT="-1001852673003"
 export BUILD_NUMBER=""
 source init.sh
