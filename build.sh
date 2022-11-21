@@ -41,11 +41,7 @@ elif [ "${clean}" == "installclean" ]; then
 else
     rm "${outdir}"/*$(date +%Y)*.zip*
 fi
-cores=$(nproc --all)
-if [ "${cores}" -gt "12" ]; then
-    cores=12
-fi
-m "${bacon}" "-j${cores}"  | tee log.txt
+m "${bacon}" -j$(nproc --all) | tee log.txt
 buildsuccessful="${?}"
 BUILD_END=$(date +"%s")
 BUILD_DIFF=$((BUILD_END - BUILD_START))
