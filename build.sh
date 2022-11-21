@@ -11,9 +11,6 @@ fi
 source build/envsetup.sh
 source "${my_dir}/config.sh"
 export RELEASES_DIR=$(echo $(cd -))
-if [ "${official}" == "true" ]; then
-    export CUSTOM_BUILD_TYPE="OFFICIAL"
-fi
 if [ -z "${buildtype}" ]; then
     export buildtype="userdebug"
 fi

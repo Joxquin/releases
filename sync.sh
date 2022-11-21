@@ -6,19 +6,10 @@ else
     telegram -i ${RELEASES_DIR}/assets/sync1.png -M "Sync started for [${ROM} ${ROM_VERSION}](${manifest_url}/tree/${branch})"
 fi
 SYNC_START=$(date +"%s")
-if [ "${official}" != "true" ]; then
-    rm -rf .repo/local_manifests
-    mkdir -p .repo/local_manifests
-    wget "${local_manifest_url}" -O .repo/local_manifests/manifest.xml
-fi
-if [ -z ${referencedir} ]; then
-    echo "referencedir is not set. Sync will happen completely dependant on your Internet connection."
-    repo init -u "${manifest_url}" -b "${branch}" --depth 1
-else
-    echo "Taking ${referencedir} as reference for existing checkouts."
-    echo "Be aware that manifests using different configuration style (e.g. lineage on reference and laos on current for LineageOS) won't take each other as reference!"
-    repo init -u "${manifest_url}" -b "${branch}" --depth 1 --reference "${referencedir}"
-fi
+rm -rf .repo/local_manifests
+mkdir -p .repo/local_manifests
+wget "${local_manifest_url}" -O .repo/local_manifests/manifest.xml
+repo init -u "${manifest_url}" -b "${branch}" --depth 1
 cores=$(nproc --all)
 if [ "${cores}" -gt "8" ]; then
     cores=8
