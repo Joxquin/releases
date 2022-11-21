@@ -17,6 +17,4 @@ git config --global user.name "${GITHUB_USER}"
 mkdir -p "${ROM_DIR}"
 cd "${ROM_DIR}"
 
-gem install haste
 source "${my_dir}"/sync.sh
-
