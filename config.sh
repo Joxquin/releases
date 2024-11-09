@@ -1,9 +1,9 @@
 #!/bin/bash
 
-export GITHUB_USER="FPSensor"
-export GITHUB_EMAIL="gkartytgmail.com"
+export GITHUB_USER="Joxquin"
+export GITHUB_EMAIL="jotajoxquin@gmial.com"
 
-export device=""
+export device="sweet2"
 
 export ROM=""
 export ROM_DIR="${WORKSPACE}"
@@ -23,7 +23,7 @@ export ccache_size=""
 
 export jenkins="true"
 
-export release_repo="FPSensor/releases"
+export release_repo="Joxquin/releases"
 export RELEASES_DIR="${WORKSPACE}/releases"
 
 export timezone="UTC"
