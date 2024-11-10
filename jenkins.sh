@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ ! -d "releases" ]; then
-    git clone https://github.com/FPSensor/releases.git
+    git clone https://github.com/Joxquin/releases.git
     cd releases
 else
     cd releases
