@@ -10,6 +10,7 @@ SYNC_START=$(date +"%s")
 rm -rf .repo/local_manifests
 mkdir -p .repo/local_manifests
 wget "${local_manifest_url}" -O .repo/local_manifests/manifest.xml
+git lfs install
 repo init -u "${manifest_url}" -b "${branch}" --depth 1 --git-lfs
 cores=$(nproc --all)
 if [ "${cores}" -gt "8" ]; then
